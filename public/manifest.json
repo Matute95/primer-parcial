@@ -1,0 +1,28 @@
+{
+  "background_color": "#ffffff",
+  "categories": ["lifestyle"],
+  "description": "Tienda de fotografias",
+  "dir": "ltr",
+  "display_override": ["standalone", "fullscreen"],
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "lang": "es-MX",
+  "name": "Primer Parcial",
+  "orientation": "portrait",
+  "prefer_related_application": false,
+  "scope": "/",
+  "short_name": "Parcial 1",
+  "start_url": "/",
+  "theme_color": "orange"
+}
