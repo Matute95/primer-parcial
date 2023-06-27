@@ -9,7 +9,7 @@ export default function Products() {
   const [fotos, setFotos] = useState([])
   const { id, tipo } = useParams()
   useEffect(()=>{
-    async function getItems(id, tipo){
+    async function getItems(){
       if(tipo==="E" || tipo==="F"){
         const getfotos = await filtro(id)
         setFotos(getfotos)
@@ -21,8 +21,8 @@ export default function Products() {
         setFotos(getfotos)
       }
     }
-    getItems(id, tipo)
-  },[])
+    getItems()
+  },[id, tipo])
   return (
     <Box sx={{ flexGrow: 1, padding:"2rem"}}>
       <Grid container spacing={1}>

@@ -2,7 +2,7 @@ import { CloudUpload, Delete, Message, RemoveRedEye } from "@mui/icons-material"
 import { BottomNavigation, BottomNavigationAction, Paper, Container, CssBaseline, Button, MenuItem, InputLabel, Select, Box, InputAdornment, OutlinedInput, Grid, CircularProgress, Typography, ListItem, ListItemAvatar, Avatar, ListItemText, List, IconButton, Badge, Backdrop } from "@mui/material"
 import React, { useEffect, useState } from "react"
 import { useDropzone } from "react-dropzone"
-import { auth, storage } from "../../firebase/credenciales"
+import { storage } from "../../firebase/credenciales"
 import { fotosPh, Peticiones, phEventos, subirFoto } from "../../firebase/datos"
 import { getUsuario } from "../../firebase/sesion"
 import PhForm from "./form"
@@ -127,20 +127,20 @@ function Dropzone({ accept, open, eventos }) {
         {file.path}
       </li>
     ));
-    const uploadDrop = async(event)=>{
-        event.preventDefault();
-        const data = new FormData(event.currentTarget)
-        await Promise.all(
-          acceptedFiles.map((file) => {
-            const imageRef = ref(storage,`aplicacion/${file.path}`)
-            uploadBytes(imageRef, file).then(async()=>{
-              const url = await getDownloadURL(imageRef)
-              await subirFoto(data.get('precio'), age, url, file)
-            })
-          })
-        )
-        setCargando(false)
-    }
+    const uploadDrop = async (event) => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      await Promise.all(
+        acceptedFiles.map((file) => {
+          const imageRef = ref(storage, `aplicacion/${file.path}`);
+          return uploadBytes(imageRef, file).then(async () => {
+            const url = await getDownloadURL(imageRef);
+            await subirFoto(data.get('precio'), age, url, file);
+          });
+        })
+      );
+      setCargando(false);
+    };    
     return (
         <div>
       <div {...getRootProps({ className: "dropzone" })} 

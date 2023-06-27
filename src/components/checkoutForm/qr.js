@@ -21,7 +21,7 @@ export default function QrEvento(){
         setOpen(!open)
     }
     useEffect(()=>{
-        async function getEvent(id){
+        async function getEvent(){
         const event = await getDoc(doc(db,"evento",id))
         try{
         const user = await getUsuario()
@@ -36,8 +36,8 @@ export default function QrEvento(){
         }
         setEvento(event.data())
         }
-        getEvent(id)
-    },[])
+        getEvent()
+    },[id])
     const downloadQR = () => {
         const canvas = document.getElementById("123456");
         const pngUrl = canvas
