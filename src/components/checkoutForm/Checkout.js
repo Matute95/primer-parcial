@@ -87,11 +87,11 @@ export default function Checkout() {
                 )}
               </Typography>
               {basket.map((item) => (
-                <Grid item xs={12} key={item.direccion}>
+                <grid item xs={12} key={item.direccion}>
                   <br />
                   <a href={item.direccion} target="_blank" rel="noreferrer" style={{ color: "blueviolet" }}>{item.direccion}</a>
                   <br />
-                </Grid>
+                </grid>
               ))}
             </React.Fragment>            
             ) : (
