@@ -74,25 +74,26 @@ export default function Checkout() {
           <React.Fragment>
             {activeStep === steps.length ? (
               <React.Fragment>
-                <Typography variant="h5" gutterBottom>
-                  Pago exitoso
-                </Typography>
-                <Typography variant="subtitle1">
-                  {basket[0].nombre==="subscripcion"?"Se ha subscrito al "+basket[0].evento+
-                  ", ahora tien acceso a las funciones de fotografo. (se le descontaran "+basket[0].mostrar+
-                  " Bs. cada "+dia.getDate()+" apartir del siguiente mes)":
-                  "Si la descarga no inicio automaticamente puede ingresar al enlace de la imagen para descargarla"
-                  }
-                </Typography>
-                {basket.map((item=>(
-                  <grid item xs={12}>
-                    <br></br>
-                    <a href={item.direccion}
-                    target="_blank" style={{color: "blueviolet"}}>{item.direccion}</a>
-                    <br></br>
-                  </grid>
-                  )))}
-              </React.Fragment>
+              <Typography variant="h5" gutterBottom>
+                Pago exitoso
+              </Typography>
+              <Typography variant="subtitle1">
+                {basket[0].nombre === "subscripcion" ? (
+                  "Se ha suscrito al " + basket[0].evento +
+                  ", ahora tiene acceso a las funciones de fotógrafo. (Se le descontarán " + basket[0].mostrar +
+                  " Bs. cada " + dia.getDate() + " a partir del siguiente mes)"
+                ) : (
+                  "Si la descarga no inició automáticamente, puede ingresar al enlace de la imagen para descargarla"
+                )}
+              </Typography>
+              {basket.map((item) => (
+                <Grid item xs={12} key={item.direccion}>
+                  <br />
+                  <a href={item.direccion} target="_blank" rel="noreferrer" style={{ color: "blueviolet" }}>{item.direccion}</a>
+                  <br />
+                </Grid>
+              ))}
+            </React.Fragment>            
             ) : (
               <React.Fragment>
                 {flag?getStepContent(activeStep):getStepContent(activeStep+1)}
