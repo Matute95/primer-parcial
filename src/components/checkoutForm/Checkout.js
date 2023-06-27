@@ -18,7 +18,7 @@ import { download, subscribir } from '../../firebase/datos';
 const theme = createTheme();
 
 export default function Checkout() {
-  const [{basket}] = useStateValue()
+  const [{basket}, dispatch] = useStateValue()
   const flag = basket[basket.length-1].flag
   const dia = new Date()
   const steps = flag?

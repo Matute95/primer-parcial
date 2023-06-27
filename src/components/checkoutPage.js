@@ -6,7 +6,7 @@ import { Total } from "./total";
 import { useStateValue } from "../StateProvider";
 
 const CheckoutPage = () => {
-    const [{basket}] = useStateValue();
+    const [{basket}, dispatch] = useStateValue();
     function FormRow(){
         return(
             <React.Fragment>

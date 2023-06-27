@@ -5,13 +5,13 @@ import { getStorage } from "firebase/storage"
 import { getMessaging } from "firebase/messaging"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAkhXyxivQoKZHNuyH8pfY_4p_nyzzl-mw",
-  authDomain: "primer-parcial-5465d.firebaseapp.com",
-  projectId: "primer-parcial-5465d",
-  storageBucket: "primer-parcial-5465d.appspot.com",
-  messagingSenderId: "514934316631",
-  appId: "1:514934316631:web:b41e7ed31329bb1c934d12",
-  measurementId: "G-LGQ3RHRCSJ"
+  apiKey: "AIzaSyD1eDk-uMOiZLne9uIcaTHpDeB5XzDKIuo",
+  authDomain: "parcial-app-c20a0.firebaseapp.com",
+  projectId: "parcial-app-c20a0",
+  storageBucket: "parcial-app-c20a0.appspot.com",
+  messagingSenderId: "678140661507",
+  appId: "1:678140661507:web:0cb8f8dc1632174e41a336",
+  measurementId: "G-H1Q060W831"
 };
 
 const app = initializeApp(firebaseConfig)

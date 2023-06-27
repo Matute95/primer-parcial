@@ -6,7 +6,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { useStateValue } from '../../StateProvider';
 
 export default function Review() {
-  const [{basket}] = useStateValue()
+  const [{basket}, dispatch] = useStateValue()
   const total = () => {
     var suma = 0
     for (var i=0; i<basket.length; i++) {

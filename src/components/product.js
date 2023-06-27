@@ -12,7 +12,7 @@ import { useState } from 'react';
 
 export default function Product({item: {direccion, nombre, mostrar, evento, fecha, fotografo, precio}}) {
   var [compra, setCompra] = useState('action')
-  const [dispatch] = useStateValue()
+  const [{basket}, dispatch] = useStateValue()
   const addToBasket = () => {
     dispatch({
       type: actionTypes.ADD_TO_BASKET,

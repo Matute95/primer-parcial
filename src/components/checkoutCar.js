@@ -10,7 +10,7 @@ import { actionTypes } from '../reducer';
 import {useStateValue} from "../StateProvider"
 
 export default function CheckoutCar({item: {direccion, mostrar, evento, fecha, precio}}) {
-  const [dispatch] = useStateValue()
+  const [{basket}, dispatch] = useStateValue()
   const removeItem = () => {
     dispatch({
       type: actionTypes.REMOVE_ITEM,  direccion
