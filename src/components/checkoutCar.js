@@ -11,6 +11,7 @@ import {useStateValue} from "../StateProvider"
 
 export default function CheckoutCar({item: {direccion, mostrar, evento, fecha, precio}}) {
   const [{basket}, dispatch] = useStateValue()
+  console.log(basket)
   const removeItem = () => {
     dispatch({
       type: actionTypes.REMOVE_ITEM,  direccion

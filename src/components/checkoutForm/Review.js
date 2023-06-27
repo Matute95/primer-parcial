@@ -7,6 +7,7 @@ import { useStateValue } from '../../StateProvider';
 
 export default function Review() {
   const [{basket}, dispatch] = useStateValue()
+  console.log(dispatch)
   const total = () => {
     var suma = 0
     for (var i=0; i<basket.length; i++) {

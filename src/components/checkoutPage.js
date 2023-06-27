@@ -7,6 +7,7 @@ import { useStateValue } from "../StateProvider";
 
 const CheckoutPage = () => {
     const [{basket}, dispatch] = useStateValue();
+    console.log(dispatch)
     function FormRow(){
         return(
             <React.Fragment>

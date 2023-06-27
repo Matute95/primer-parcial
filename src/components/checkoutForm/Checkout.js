@@ -19,6 +19,7 @@ const theme = createTheme();
 
 export default function Checkout() {
   const [{basket}, dispatch] = useStateValue()
+  console.log(dispatch)
   const flag = basket[basket.length-1].flag
   const dia = new Date()
   const steps = flag?

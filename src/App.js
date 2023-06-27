@@ -16,8 +16,8 @@ import Perfil from './components/perfil'
 import Mostrar from './components/mostrar'
 
 function App() {
-  const [{ user }, dispatch] = useStateValue();
-
+  const [{ user },{basket}, dispatch] = useStateValue();
+  console.log(basket)
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((fireUser) => {
       if (fireUser) {
