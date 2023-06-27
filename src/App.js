@@ -27,7 +27,7 @@ function App() {
         })
       }
     })
-  },[])
+  },[dispatch])
 
   return (
     <BrowserRouter>
