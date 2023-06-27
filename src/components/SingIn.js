@@ -19,10 +19,10 @@ const theme = createTheme();
 
 export default function SignIn() {
   const navigate = useNavigate();
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
-    Login(data.get('email'), data.get('password'))
+    await Login(data.get('email'), data.get('password'))
     navigate('/')
   };
 

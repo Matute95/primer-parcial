@@ -15,23 +15,19 @@ import QrEvento from './components/checkoutForm/qr'
 import Perfil from './components/perfil'
 import Mostrar from './components/mostrar'
 
+
 function App() {
-  const [{ user },{basket}, dispatch] = useStateValue();
-  console.log(basket)
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((fireUser) => {
-      if (fireUser) {
+  const [{user}, dispatch] = useStateValue()
+  useEffect(()=>{
+    auth.onAuthStateChanged((fireUser) =>{
+      if (fireUser){
         dispatch({
           type: actionTypes.SET_USER,
-          user: fireUser,
-        });
+          user: fireUser
+        })
       }
-    });
-
-    return () => {
-      unsubscribe();
-    };
-  }, [dispatch]);
+    })
+  },[])
 
   return (
     <BrowserRouter>
