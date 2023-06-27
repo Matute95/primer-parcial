@@ -23,7 +23,6 @@ function MyComponent() {
   }, [])
 
   const onUnmount = React.useCallback(function callback(map) {
-    setMap(null)
   }, [])
 
   return isLoaded ? (

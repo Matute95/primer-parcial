@@ -57,9 +57,6 @@ export function download(nombre){
   .then((url) => {
     const xhr = new XMLHttpRequest();
     xhr.responseType = 'blob';
-    xhr.onload = (event) => {
-      xhr.response;
-    };
     xhr.open('GET', url);
     xhr.send();
   })
