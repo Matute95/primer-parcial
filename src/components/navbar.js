@@ -23,8 +23,7 @@ import { actionTypes } from '../reducer';
 import { auth } from '../firebase/credenciales';
 import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import { ShoppingCart, Image, CameraAlt, Celebration, Person, QrCode, Download } from '@mui/icons-material';
-import { Prueba } from '../rekognition/funciones';
+import { ShoppingCart, Image, CameraAlt, Celebration, Person, Download } from '@mui/icons-material';
 
 const drawerWidth = 240;
 
@@ -98,7 +97,7 @@ React.useEffect(() => {
     setOpen(false);
   };
   
-  const [{basket, user, items}, dispatch] = useStateValue()
+  const [{basket, user}, dispatch] = useStateValue()
   const navigate = useNavigate();
   const out = () => {
     if (user){

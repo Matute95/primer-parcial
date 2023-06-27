@@ -3,12 +3,11 @@ import { BottomNavigation, BottomNavigationAction, Paper, Container, CssBaseline
 import React, { useEffect, useState } from "react"
 import { useDropzone } from "react-dropzone"
 import { auth, storage } from "../../firebase/credenciales"
-import { borrar, fotosPh, Peticiones, phEventos, subirFoto } from "../../firebase/datos"
+import { fotosPh, Peticiones, phEventos, subirFoto } from "../../firebase/datos"
 import { getUsuario } from "../../firebase/sesion"
 import PhForm from "./form"
 import { ref, getDownloadURL, uploadBytes } from "firebase/storage"
 import { useNavigate } from "react-router-dom"
-
 
 export default function Phindex(){
     const [phval, setPhval] = useState(0)
@@ -30,7 +29,7 @@ export default function Phindex(){
         setPhval(1):setPhval(2)
         }
         getPhval()
-    },[value, auth.currentUser])
+    },[value])
     return <Container component="main" maxWidth={phval===1?"xs":"md"}><CssBaseline />{
       phval===0? <Grid xs display="flex" justifyContent="center" alignItems="center">
         <CircularProgress/> </Grid> :  phval===1?value===0?
@@ -116,7 +115,6 @@ export default function Phindex(){
 function Dropzone({ accept, open, eventos }) {
     const [age, setAge] = React.useState('');
     const [cargando, setCargando] = useState(false)
-    const navigate = useNavigate();
     const handleChange = (event) => {
         setAge(event.target.value);
     };

@@ -9,12 +9,10 @@ import { AddShoppingCart, CameraAlt } from '@mui/icons-material';
 import { actionTypes } from '../reducer';
 import {useStateValue} from "../StateProvider"
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 export default function Product({item: {direccion, nombre, mostrar, evento, fecha, fotografo, precio}}) {
   var [compra, setCompra] = useState('action')
-  const navigate = useNavigate();
-  const [{basket}, dispatch] = useStateValue()
+  const [dispatch] = useStateValue()
   const addToBasket = () => {
     dispatch({
       type: actionTypes.ADD_TO_BASKET,

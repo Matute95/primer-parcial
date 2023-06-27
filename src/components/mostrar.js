@@ -8,7 +8,7 @@ export default function Mostrar(){
     const [mostrar, setMostrar] = useState([])
     const { id } = useParams()
     useEffect(()=>{
-        async function getDatos(){
+        async function getDatos(id){
             if(id==="evento"){
                 const datos = await get(id)
                 setMostrar(datos)
@@ -17,7 +17,7 @@ export default function Mostrar(){
                 setMostrar(datos)
             }
         }
-        getDatos()
+        getDatos(id)
     },[])
     return(
         <Container component="main" maxWidth="xs"><CssBaseline />

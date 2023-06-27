@@ -30,14 +30,6 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
-const containerStyle = {
-  width: '400px',
-  height: '400px'
-};
-const center = {
-  lat: -3.745,
-  lng: -38.523
-};
 
 export default function SignUp() {
   const [value, setValue] = useState(dayjs('2022-12-18T20:00:00'));

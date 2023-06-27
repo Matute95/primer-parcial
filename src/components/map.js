@@ -16,14 +16,10 @@ function MyComponent() {
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyCkpPrflFMUIy8YuDWN5L9MNVjYNLWMdRY"
   })
-  const [map, setMap] = React.useState(null)
-  const [x, setX] = React.useState(-17.783448337566117)
-  const [y, setY] = React.useState(-63.18267368172742)
 
   const onLoad = React.useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds(center);
     map.fitBounds(bounds);
-    setMap(map)
   }, [])
 
   const onUnmount = React.useCallback(function callback(map) {

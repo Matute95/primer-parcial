@@ -53,7 +53,7 @@ const tiers = [
 ];
 
 function PricingContent() {
-  const [{basket}, dispatch] = useStateValue()
+  const [dispatch] = useStateValue()
   const navigate = useNavigate();
   return (
     <React.Fragment>

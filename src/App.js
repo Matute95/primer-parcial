@@ -16,9 +16,10 @@ import Perfil from './components/perfil'
 import Mostrar from './components/mostrar'
 
 function App() {
-  const [{user}, dispatch] = useStateValue()
+  const [{user}] = useStateValue()
   useEffect(()=>{
     auth.onAuthStateChanged((fireUser) =>{
+      const [dispatch] = useStateValue()
       if (fireUser){
         dispatch({
           type: actionTypes.SET_USER,

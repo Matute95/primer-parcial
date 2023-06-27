@@ -7,10 +7,9 @@ import { useParams } from "react-router-dom"
 
 export default function Products() {
   const [fotos, setFotos] = useState([])
-  const { id } = useParams()
-  const { tipo } = useParams()
+  const { id, tipo } = useParams()
   useEffect(()=>{
-    async function getItems(){
+    async function getItems(id, tipo){
       if(tipo==="E" || tipo==="F"){
         const getfotos = await filtro(id)
         setFotos(getfotos)
@@ -22,7 +21,7 @@ export default function Products() {
         setFotos(getfotos)
       }
     }
-    getItems()
+    getItems(id, tipo)
   },[])
   return (
     <Box sx={{ flexGrow: 1, padding:"2rem"}}>

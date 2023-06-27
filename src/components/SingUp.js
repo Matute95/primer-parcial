@@ -11,7 +11,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { regUser } from '../firebase/sesion';
 import { useNavigate } from 'react-router-dom';
-import { Image, Info } from '@mui/icons-material';
+import { Info } from '@mui/icons-material';
 import { Tooltip } from '@mui/material';
 
 const theme = createTheme();
